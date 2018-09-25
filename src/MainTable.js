@@ -1,37 +1,27 @@
 import React, { Component } from 'react';
 import Coin from './Coin.js'
+import coinData from './coinData.json'
+
 
 class MainTable extends Component {
     state = {}
     render() {
 
-        const coinData = [
-            {
-                name: "bitcoin",
-                symbol: "BTC",
-                circulating: "50",
-                price: "6400",
-                volume: "988766",
-                marketCap: "9898786",
-                lastHour: "0989878",
-                lastTwentyFour: "76756",
-                lastSeven: "76345646"
-            }
-        ]
-
-        const coins = coinData.map((coin) =>
-            <Coin
+        let coins = Object.keys(coinData.data).map(id => {
+            let coin = coinData.data[id]
+            return <Coin
                 name={coin.name}
                 symbol={coin.symbol}
-                circulating={coin.circulating}
-                price={coin.price}
-                volume={coin.volume}
-                marketCap={coin.marketCap}
-                lastHour={coin.lastHour}
-                lastTwentyFour={coin.lastTwentyFour}
-                lastSeven={coin.lastSeven}
+                circulating={coin.circulating_supply}
+                price={coin.quotes.USD.price}
+                volume={coin.quotes.USD.volume_24h}
+                marketCap={coin.quotes.USD.market_cap}
+                lastHour={coin.quotes.USD.percent_change_1h}
+                lastTwentyFour={coin.quotes.USD.percent_change_24h}
+                lastSeven={coin.quotes.USD.percent_change_7d}
             />
-        )
+        })
+
 
         return (
             <table>
@@ -59,7 +49,7 @@ class MainTable extends Component {
 
                 </tbody>
 
-            </table>
+            </table >
         )
     }
 }
