@@ -15,7 +15,7 @@ class Coin extends Component {
                 <td>{this.props.lastTwentyFour}%</td>
                 <td>{this.props.lastSeven}%</td>
             </tr>
-        );
+        )
     }
 }
 

@@ -1,15 +1,33 @@
 import React, { Component } from 'react';
 import Coin from './Coin.js'
-import coinData from './coinData.json'
+// import coinData from './coinData.json'
 
 
 class MainTable extends Component {
-    state = {}
-    render() {
 
-        let coins = Object.keys(coinData.data).map(id => {
-            let coin = coinData.data[id]
+    constructor(props) {
+        super(props)
+
+        this.state = { coins: [] }
+    }
+
+    componentDidMount() {
+        setInterval(() => {
+            fetch(`https://api.coinmarketcap.com/v2/ticker/?limit=${this.props.limit}`)
+                .then(response => {
+                    return response.json()
+                })
+                .then(myJson => {
+                    this.setState({ coins: myJson.data })
+                })
+        }, 1000)
+    }
+
+    render() {
+        let coins = Object.keys(this.state.coins).map(id => {
+            let coin = this.state.coins[id]
             return <Coin
+                key={coin.id}
                 name={coin.name}
                 symbol={coin.symbol}
                 circulating={coin.circulating_supply}
@@ -21,7 +39,6 @@ class MainTable extends Component {
                 lastSeven={coin.quotes.USD.percent_change_7d}
             />
         })
-
 
         return (
             <table>
