@@ -13,7 +13,7 @@ class MainTable extends Component {
 
     componentDidMount() {
         setInterval(() => {
-            fetch(`https://api.coinmarketcap.com/v2/ticker/?limit=${this.props.limit}`)
+            fetch('https://api.coinmarketcap.com/v2/ticker/?limit=100')
                 .then(response => {
                     return response.json()
                 })

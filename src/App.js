@@ -9,7 +9,7 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <MainTable limit={10} />
+        <MainTable />
       </div>
     )
   }

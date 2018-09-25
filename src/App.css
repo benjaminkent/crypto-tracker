@@ -1,19 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Assistant:400,600,700|Permanent+Marker');
+
 header {
   text-align: center;
   margin: 0;
   font-size: 2rem;
+  font-family: 'Permanent Marker', cursive;
+}
+
+h1 {
+  margin: 0;
 }
 
 th {
-  font-size: 1.5rem;
+  font-size: 2rem;
+  font-family: 'Permanent Marker', cursive;
+}
+
+table {
+  width: 100%;
 }
 
 td {
   height: 30px;
   text-align: center;
+  font-family: 'Assistant', sans-serif;
 }
 
 .general-data {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 1rem;
 }
