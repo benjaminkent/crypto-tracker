@@ -25,7 +25,7 @@ class Coin extends Component {
 
                 <tbody>
                     <tr>
-                        <td>{this.props.coin}</td>
+                        <td>{this.props.name}</td>
                         <td>{this.props.symbol}</td>
                         <td>{this.props.circulating}</td>
                         <td>${this.props.price}</td>
