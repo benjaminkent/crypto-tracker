@@ -34,9 +34,32 @@ class MainTable extends Component {
         )
 
         return (
-            <td className="coin-info">
-                {coins}
-            </td>
+            <table>
+
+                <thead>
+                    <tr>
+                        <th colSpan="9">CryptoCurrency Data</th>
+                    </tr>
+                    <tr className="general-data">
+                        <td>Name</td>
+                        <td>Symbol</td>
+                        <td>Circulating Supply</td>
+                        <td>Price</td>
+                        <td>Volume last 24 hours</td>
+                        <td>Market Cap</td>
+                        <td>% change last hour</td>
+                        <td>% change last 24 hours</td>
+                        <td>% change last 7 days</td>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    {coins}
+
+                </tbody>
+
+            </table>
         )
     }
 }
