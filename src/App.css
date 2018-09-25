@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Assistant:400,600,700|Permanent+Marker');
 
+body {
+  background-color: #242838;
+  color: #ffe391;
+}
+
 header {
   text-align: center;
   margin: 0;
@@ -9,11 +14,13 @@ header {
 
 h1 {
   margin: 0;
+  color: #009fb7;
 }
 
 th {
   font-size: 2rem;
   font-family: 'Permanent Marker', cursive;
+  color: #fed766;
 }
 
 table {
@@ -26,7 +33,16 @@ td {
   font-family: 'Assistant', sans-serif;
 }
 
+.green {
+  color: #b3efb2
+}
+
+.red {
+  color: #f56960;
+}
+
 .general-data {
   font-weight: 700;
   font-size: 1rem;
+  color: #fed766;
 }
