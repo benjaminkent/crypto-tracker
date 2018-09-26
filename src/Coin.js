@@ -2,36 +2,45 @@ import React, { Component } from 'react';
 
 class Coin extends Component {
 
-    // constructor(props) {
-    //     super(props)
-    // 
-    //     this.state = { price: 0 }
-    // 
-    //     componentDidUpdate(prevProps); {
-    //         if (this.state.price > prevProps.price) {
-    //             // add green class
-    //             className += 'green'
-    //         }
-    // 
-    //         if (this.state.price < prevProps.price) {
-    //             // add red class
-    //             className += 'red'
-    //         }
-    //     }
-    // }
+    constructor(props) {
+        super(props)
 
-    // componentDidUpdate(prevProps) {
-    //     if (this.props.price > prevProps.price) {
-    //         className += 'green'
-    //     }
-    //     if (this.props.price < prevProps.price) {
-    //         className += 'red'
-    //     }
-    // }
+        this.state = {
+            priceIncreasing: false,
+            priceDecreasing: false
+        }
+    }
+
+    componentWillReceiveProps = newProps => {
+        if (newProps.price > this.props.price) {
+            this.setState((state, props) => {
+                return {
+                    priceIncreasing: true
+                }
+            })
+        }
+        if (newProps.price < this.props.price) {
+            this.setState((state, props) => {
+                return {
+                    priceDecreasing: true
+                }
+            })
+        }
+    }
 
     render() {
+        let priceClass = "normal"
+
+        if (this.state.priceIncreasing) {
+            priceClass = "green"
+        }
+
+        if (this.state.priceDecreasing) {
+            priceClass = "red"
+        }
+
         return (
-            <tr>
+            <tr className={priceClass}>
                 <td>{this.props.name}</td>
                 <td>{this.props.symbol}</td>
                 <td>{this.props.circulating}</td>
@@ -47,3 +56,4 @@ class Coin extends Component {
 }
 
 export default Coin;
+
