@@ -1,7 +1,34 @@
 import React, { Component } from 'react';
 
 class Coin extends Component {
-    state = {}
+
+    // constructor(props) {
+    //     super(props)
+    // 
+    //     this.state = { price: 0 }
+    // 
+    //     componentDidUpdate(prevProps); {
+    //         if (this.state.price > prevProps.price) {
+    //             // add green class
+    //             className += 'green'
+    //         }
+    // 
+    //         if (this.state.price < prevProps.price) {
+    //             // add red class
+    //             className += 'red'
+    //         }
+    //     }
+    // }
+
+    // componentDidUpdate(prevProps) {
+    //     if (this.props.price > prevProps.price) {
+    //         className += 'green'
+    //     }
+    //     if (this.props.price < prevProps.price) {
+    //         className += 'red'
+    //     }
+    // }
+
     render() {
         return (
             <tr>
